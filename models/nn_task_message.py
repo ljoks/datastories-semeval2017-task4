@@ -19,7 +19,7 @@ numpy.random.seed(1337)  # for reproducibility
 # for example, WC_CORPUS = "own.twitter" and WC_DIM = 300,
 # correspond to the file "datastories.twitter.300d.txt"
 WV_CORPUS = "datastories.twitter"
-WV_DIM = 300
+WV_DIM = 50
 
 # Flag that sets the training mode.
 # - if FINAL == False,  then the dataset will be split in {train, val, test}

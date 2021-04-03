@@ -99,7 +99,7 @@ class SemEvalDataLoader:
         :param years: a number or a tuple of (from,to)
         :param datasets: set with possible values {"train", "dev", "devtest", "test"}
         :return: a list of tuples (sentiment, text)
-        """
+        """     
         if only_semeval:
             files = glob.glob(self.task_folders[task] + "*{}.tsv".format(task))
         else:
@@ -126,5 +126,25 @@ class SemEvalDataLoader:
             data.update(dataset)
 
         return [v for k, v in sorted(data.items())]
+
+    def get_covid_data(self):
+        print("get covid data")
+        data = {}
+
+        files = glob.glob("E:\Github repositories\datastories-semeval2017-task4\dataset\covid\covid-*.tsv")
+
+        print(files)
+
+        for file in files:
+            print("File:")
+            print(file)
+            dataset = self.parse_file(file)
+
+            data.update(dataset)
+
+        return [v for k, v in sorted(data.items())]
+
+
+
 
 # SemEvalDataLoader().get_gold(task="A")
