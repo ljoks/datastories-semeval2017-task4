@@ -140,7 +140,7 @@ class Task4Loader:
         #                                                     years=None,
         #                                                     datasets=None,
         #                                                     only_semeval=True)
-        dataset = SemEvalDataLoader().get_covid_data()
+        dataset = SemEvalDataLoader().get_covid_data(task=subtask)
         random.Random(42).shuffle(dataset)
 
         if filter_classes:

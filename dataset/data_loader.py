@@ -127,18 +127,18 @@ class SemEvalDataLoader:
 
         return [v for k, v in sorted(data.items())]
 
-    def get_covid_data(self):
+    def get_covid_data(self, task):
         print("get covid data")
         data = {}
 
-        files = glob.glob("E:\Github repositories\datastories-semeval2017-task4\dataset\covid\covid-*.tsv")
+        files = glob.glob("E:\Github repositories\datastories-semeval2017-task4\dataset\covid\Task-{}\covid-*-task-{}.tsv".format(task, task))
 
         print(files)
 
         for file in files:
             print("File:")
             print(file)
-            dataset = self.parse_file(file)
+            dataset = self.parse_file(file, with_topic=task != "A")
 
             data.update(dataset)
 

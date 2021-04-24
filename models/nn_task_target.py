@@ -21,14 +21,14 @@ numpy.random.seed(1337)  # for reproducibility
 # for example, WC_CORPUS = "own.twitter" and WC_DIM = 300,
 # correspond to the file "datastories.twitter.300d.txt"
 WV_CORPUS = "datastories.twitter"
-WV_DIM = 300
+WV_DIM = 50
 
 # Flag that sets the training mode.
 # - if FINAL == False,  then the dataset will be split in {train, val, test}
 # - if FINAL == True,   then the dataset will be split in {train, val}.
 # Even for training the model for the final submission a small percentage
 # of the labeled data will be kept for as a validation set for early stopping
-FINAL = True
+FINAL = False
 
 # If True, the SemEval gold labels will be used as the testing set in order to perform Post-mortem analysis
 POST_MORTEM = True
